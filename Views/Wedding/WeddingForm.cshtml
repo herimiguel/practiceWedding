@@ -1,0 +1,27 @@
+@model weddingPlanner.Models.WeddingViewModel
+<div class="row">
+    <div class="eight columns">
+        <h3>Plan Your Wedding</h3>
+    </div>
+    <div class="two columns">
+        <a asp-controller="Wedding" asp-action="Dashboard">Dashboard</a>
+    </div>
+    <div class="two columns">
+        <a asp-controller="User" asp-action="Logout">Logout</a>
+    </div>
+</div>
+<form asp-controller="Wedding" asp-action="AddWedding" method="post">
+    <label asp-for="SpouseOne"></label>
+    <input asp-for="SpouseOne"/>
+    <span class='error' asp-validation-for="SpouseOne"></span>
+    <label asp-for="SpouseTwo"></label>
+    <input asp-for="SpouseTwo"/>
+    <span class='error' asp-validation-for="SpouseTwo"></span>
+    <label asp-for="Date"></label>
+    <input asp-for="Date"/>
+    <span class='error' asp-validation-for="Date"></span>
+    <label asp-for="Address"></label>
+    <input asp-for="Address"/>
+    <span class='error' asp-validation-for="Address"></span>
+    <br><button class="button-primary" type="submit">Create</button>
+</form>
